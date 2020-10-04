@@ -1,13 +1,11 @@
 package guru.springframework.msgapp.web.controller;
 
 import guru.springframework.msgapp.services.CustomerService;
+import guru.springframework.msgapp.web.model.BeerDto;
 import guru.springframework.msgapp.web.model.CustomerDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
 
@@ -21,7 +19,7 @@ public class CustomerController {
     }
 
     @GetMapping("/{customerID}")
-    ResponseEntity<CustomerDto> getCustomerById(@PathVariable("customerID")UUID id) {
+    public ResponseEntity<CustomerDto> getCustomerById(@PathVariable("customerID")UUID id) {
         return new ResponseEntity<>(this.customerService.getCustomerById(id), HttpStatus.OK);
     }
 }

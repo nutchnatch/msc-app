@@ -12,7 +12,14 @@ public class BeerserviceImpl implements Beerservice {
         return BeerDto.builder()
                 .id(UUID.randomUUID())
                 .beerName("Galaxy Cat")
-                .beerStyle("Pale Ale")
+                .beerStyle("Pale Alez tout le monde!")
+                .build();
+    }
+
+    @Override
+    public BeerDto saveNewBeer(BeerDto beerDto) {
+        return BeerDto.builder()
+                .id(UUID.randomUUID())
                 .build();
     }
 }
