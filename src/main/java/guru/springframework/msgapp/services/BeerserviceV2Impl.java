@@ -1,32 +1,33 @@
 package guru.springframework.msgapp.services;
 
+import guru.springframework.msgapp.web.model.v2.BeerDtoV2;
+import guru.springframework.msgapp.web.model.v2.BeerStyleEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import guru.springframework.msgapp.web.model.BeerDto;
 
 import java.util.UUID;
 
 @Slf4j
 @Service
-public class BeerserviceImpl implements Beerservice {
+public class BeerserviceV2Impl implements BeerserviceV2 {
     @Override
-    public BeerDto getBeerById(UUID beerId) {
-        return BeerDto.builder()
+    public BeerDtoV2 getBeerById(UUID beerId) {
+        return BeerDtoV2.builder()
                 .id(UUID.randomUUID())
                 .beerName("Galaxy Cat")
-                .beerStyle("Pale Alez tout le monde!")
+                .beerStyle(BeerStyleEnum.GOSE)
                 .build();
     }
 
     @Override
-    public BeerDto saveNewBeer(BeerDto beerDto) {
-        return BeerDto.builder()
+    public BeerDtoV2 saveNewBeer(BeerDtoV2 beerDto) {
+        return BeerDtoV2.builder()
                 .id(UUID.randomUUID())
                 .build();
     }
 
     @Override
-    public void updateBeer(UUID id, BeerDto beerDto) {
+    public void updateBeer(UUID id, BeerDtoV2 beerDto) {
 
     }
 

@@ -8,4 +8,8 @@ public interface Beerservice {
     BeerDto getBeerById(UUID beerId);
 
     BeerDto saveNewBeer(BeerDto beerDto);
+
+    void updateBeer(UUID id, BeerDto beerDto);
+
+    void deleteById(UUID id);
 }
